@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_day"
+        android:entries="@array/day">
+    </Spinner>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_ClsName"
+        android:hint="课程名称" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_ClsSite"
+        android:hint="上课地点" />
+    <Button
+        android:id="@+id/showdialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="周数"/>
+    <Button
+        android:id="@+id/btn_clsNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLinkagePicker"
+        android:text="节数"/>
+    <Button
+        android:id="@+id/bt_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定"/>
+    <Button
+        android:id="@+id/diy_setting_btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消/删除"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="从编辑进来→点击删除可以删除正在编辑的课程"/>
+</LinearLayout>
