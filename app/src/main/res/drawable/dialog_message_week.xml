@@ -4,10 +4,11 @@
 
     <size
         android:width="50dp"
-        android:height="50dp"/>
+        android:height="40dp"/>
     <solid
-        android:color="@color/blue"/>
+        android:color="@color/dialog_message_table"/>
     <stroke
+        android:color="@color/hui"
         android:width="0.1px"/>
 
 </shape>

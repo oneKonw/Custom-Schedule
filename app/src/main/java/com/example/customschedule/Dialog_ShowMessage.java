@@ -40,7 +40,7 @@ public class Dialog_ShowMessage extends Dialog {
     private TextView tv_clsName;
     private TextView tv_clsSite;
     private TextView tv_clsNumber;
-    private Button btn_setting;
+    private TextView tv_setting;
 
     @TargetApi(16)
     @Override
@@ -55,17 +55,19 @@ public class Dialog_ShowMessage extends Dialog {
          */
         tv_clsName =(TextView)findViewById(R.id.dialog_tv_ClsName);
         clsName = diyCourses.getTxtClsName();
-        tv_clsName.setText(clsName);
+        String tempClsName = clsName;
+        tv_clsName.setText(tempClsName);
         /**
          * 获取教室
          */
         tv_clsSite = (TextView) findViewById(R.id.dialog_tv_clsSite);
         clsSite = diyCourses.getTxtClsSite();
-        tv_clsSite.setText(clsSite);
+        String tempClsSite = "教室" + "  " + clsSite;
+        tv_clsSite.setText(tempClsSite);
         /**
          * 获取所在节数（可有可无）
          */
-        tv_clsNumber = (TextView)findViewById(R.id.dialog_tv_Number);
+        tv_clsNumber = (TextView)findViewById(R.id.dialog_tv_clsNumber);
         int startNumber = diyCourses.getTxtNumber();
         int countNumber = diyCourses.getTxtCountNumber();
         int start = startNumber + 1;
@@ -76,7 +78,7 @@ public class Dialog_ShowMessage extends Dialog {
         /**
          *生成25个txtview
          */
-        RelativeLayout rl_weeks = (RelativeLayout)findViewById(R.id.dialog_rl_weeks);
+        RelativeLayout rl_weeks = (RelativeLayout)findViewById(R.id.dialog_table_weeks );
         for (int i = 1; i < 26; i++){
             TextView tv = new TextView(getContext());
             String week = "week"+String.valueOf(i);
@@ -94,7 +96,7 @@ public class Dialog_ShowMessage extends Dialog {
                     left = 4;
                 }
 
-                int margintop = ConversionPxandDP.dip2px(getContext(),top*50);
+                int margintop = ConversionPxandDP.dip2px(getContext(),top*40);
                 int marginleft = ConversionPxandDP.dip2px(getContext(),left*50);
 
                 //运用param方法对tv进行生成
@@ -112,7 +114,7 @@ public class Dialog_ShowMessage extends Dialog {
                 if (left == -1){
                     left = 4;
                 }
-                int margintop = ConversionPxandDP.dip2px(getContext(),top*50);
+                int margintop = ConversionPxandDP.dip2px(getContext(),top*40);
                 int marginleft = ConversionPxandDP.dip2px(getContext(),left*50);
                 //运用param方法对tv进行生成
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -127,8 +129,8 @@ public class Dialog_ShowMessage extends Dialog {
         /**
          * 编辑按钮
          */
-        btn_setting = (Button)findViewById(R.id.dialog_btn_setting);
-        btn_setting.setOnClickListener(new View.OnClickListener() {
+        tv_setting = (TextView)findViewById(R.id.dialog_tv_setting);
+        tv_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                ViewGroup parent = (ViewGroup) v.getParent();

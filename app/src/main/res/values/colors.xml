@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#616eb9</color>
+    <color name="colorPrimaryDark">#5963a3</color>
     <color name="colorAccent">#FF4081</color>
     <color name="blue" type="color">#cad4ba</color>
-    <color name="white" type="color">#fff</color>
-    <color name="transparent" type="color">#000000</color>
-    <color name="light_blue" type="color">#f5f5dc</color>
-    <color name="light_green" type="color">#e1dbcd</color>
-    <color name="light_pink" type="color">#bed2b6</color>
-    <color name="hole_blue" type="color">#ebe8db</color>
+    <color name="white" type="color">#FDFEFE</color>
+    <color name="hui" type="color">#A3A3A3</color>
+
+    <color name="s_green1" type="color">#F5EFE5</color>
+    <color name="s_green3" type="color">#6A9A87</color>
+    <color name="s_green4" type="color">#C9D9D0</color>
+    <color name="s_green5" type="color">#A4C1B4</color>
+
+    <color name="black" type="color">#1E1D1D</color>
+
+    <color name="red" type="color">#F11518</color>
+    <color name="red2" type="color">#FE4848</color>
+
+    <!--课程详情页配色-->
+    <color name="dialog_message_clsName" type="color">#ef737373</color>
+    <color name="dialog_message_table" type="color">#f3f1f0</color>
+    <color name="dialog_message_setting" type="color">#e7ff8a8a</color>
+
+    <!--DIY设置配色-->
+    <color name="DIY_setting_week" type="color">#a1adce</color>
+    <color name="DIY_setting_number" type="color">#FEDADB</color>
+    <color name="DIY_setting_yes" type="color">#888B91</color>
+    <color name="DIY_setting_no" type="color">#d2696c</color>
+
+
+
+
+
 </resources>

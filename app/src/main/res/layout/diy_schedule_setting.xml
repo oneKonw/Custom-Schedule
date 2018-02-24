@@ -3,45 +3,119 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner_day"
-        android:entries="@array/day">
-    </Spinner>
-    <EditText
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_ClsName"
-        android:hint="课程名称" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_ClsSite"
-        android:hint="上课地点" />
+        android:layout_height="wrap_content">
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/spinner_day"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:entries="@array/day"
+            >
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="40dp"
+            android:text="课程名称"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:id="@+id/textView2" />
+
+        <EditText
+            android:id="@+id/tv_ClsName"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:textSize="15dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:hint="未填写" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="3"
+            android:text="上课地点"
+            android:textSize="15dp"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/tv_ClsSite"
+            android:hint="未填写"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="7"
+            android:layout_gravity="center"
+            android:textSize="15dp"
+/>
+    </LinearLayout>
+
+
     <Button
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:id="@+id/showdialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="周数"/>
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="周数"
+        android:background="@color/DIY_setting_week"
+        />
+
     <Button
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:id="@+id/btn_clsNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:onClick="onLinkagePicker"
-        android:text="节数"/>
-    <Button
-        android:id="@+id/bt_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="确定"/>
-    <Button
-        android:id="@+id/diy_setting_btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="取消/删除"/>
+        android:text="节数"
+        android:background="@color/DIY_setting_week"
+        />
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/bt_confirm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:background="@color/DIY_setting_yes"
+            />
+        <Button
+            android:id="@+id/diy_setting_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消/删除"
+            android:background="@color/DIY_setting_no"
+            />
+    </LinearLayout>
+
+
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="从编辑进来→点击删除可以删除正在编辑的课程"/>
 </LinearLayout>

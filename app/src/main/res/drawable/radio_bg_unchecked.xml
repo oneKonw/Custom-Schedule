@@ -3,7 +3,7 @@
     android:shape="rectangle">
     <!-- 填充 -->
     <stroke
-        android:color="@color/colorPrimary"
+        android:color="@color/hui"
         android:width="0.1dp"/>
     <solid android:color="@color/white" />
     <!-- 圆角 -->
