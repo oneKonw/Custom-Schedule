@@ -20,7 +20,7 @@
     <!--课程详情页配色-->
     <color name="dialog_message_clsName" type="color">#ef737373</color>
     <color name="dialog_message_table" type="color">#f3f1f0</color>
-    <color name="dialog_message_setting" type="color">#e7ff8a8a</color>
+    <color name="dialog_message_setting" type="color">#e79b7979</color>
 
     <!--DIY设置配色-->
     <color name="DIY_setting_week" type="color">#a1adce</color>

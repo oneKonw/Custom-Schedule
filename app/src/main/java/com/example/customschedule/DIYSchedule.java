@@ -198,7 +198,7 @@ public class DIYSchedule extends AppCompatActivity {
         });
     }
     public void onLinkagePicker(View view) {
-        //联动选择器的更多用法，可参见AddressPicker和CarNumberPicker
+
         LinkagePicker.DataProvider provider = new LinkagePicker.DataProvider() {
 
             @Override
@@ -247,6 +247,15 @@ public class DIYSchedule extends AppCompatActivity {
         picker.setTextSize(15);
         picker.setTitleText("节数选择");
         picker.setGravity(Gravity.CENTER);
+
+        picker.setBackgroundColor(getResources().getColor(R.color.dialog_message_table));
+        picker.setDividerColor(getResources().getColor(R.color.dialog_message_setting));
+        picker.setSubmitTextColor(getResources().getColor(R.color.dialog_message_setting));
+        picker.setTopLineColor(getResources().getColor(R.color.dialog_message_setting));
+        picker.setTextColor(getResources().getColor(R.color.dialog_message_setting));
+        picker.setCancelTextColor(getResources().getColor(R.color.dialog_message_setting));
+        picker.setTitleTextColor(getResources().getColor(R.color.dialog_message_clsName));
+
         picker.setOnStringPickListener(new LinkagePicker.OnStringPickListener() {
             @Override
             public void onPicked(String first, String second, String third) {

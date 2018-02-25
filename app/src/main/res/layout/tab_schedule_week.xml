@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/icod"
+            android:id="@+id/tab_tv_nowweek"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="第一周"
@@ -16,6 +16,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:paddingTop="3dp"
+            android:paddingBottom="4dp"
             android:background="@color/white"
             android:elevation="1dp"/>
         <Spinner
@@ -163,6 +164,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/tab_week_ll_week"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"

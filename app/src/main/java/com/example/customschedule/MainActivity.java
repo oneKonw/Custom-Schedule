@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
         }
-        mNavigationView.setCheckedItem(R.id.nav_DIYSchedule);
+//        mNavigationView.setCheckedItem(R.id.nav_DIYSchedule);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
