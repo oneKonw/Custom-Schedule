@@ -127,6 +127,7 @@ public class ScheduleWeekRefresh {
     public void setTextView(String text, final int id, int dp, RelativeLayout r1, int countNumber ){
         final TextView tv1 = new TextView(context);
         tv1.setText(text);
+        tv1.setTextSize(13);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         int topMargin = ConversionPxandDP.dip2px(context,dp);
         params.setMargins(0,topMargin,0,0);

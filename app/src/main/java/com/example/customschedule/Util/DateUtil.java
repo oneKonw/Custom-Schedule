@@ -7,10 +7,17 @@ import java.util.Calendar;
  */
 
 public class DateUtil {
+    static Calendar calendar ;
+
     public static int getWeek(){
-        Calendar calendar = Calendar.getInstance();
-        int i = calendar.get(Calendar.DAY_OF_WEEK);
-        return i;
+        calendar = Calendar.getInstance();
+        int resultWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        return resultWeek;
         //注意1代表星期天，其余按顺序推导
+    }
+    public static int getDayOfYear(){
+
+        int resultDay = calendar.get(Calendar.DAY_OF_YEAR);
+        return resultDay;
     }
 }
