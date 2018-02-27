@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CustomSchedule</string>
+    <string name="app_name">自定义课程表</string>
     <string-array name="day">
         <item>星期一</item>
         <item>星期二</item>
