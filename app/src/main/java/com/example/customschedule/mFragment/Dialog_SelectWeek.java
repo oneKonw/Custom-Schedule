@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.customschedule.R;
+import com.example.customschedule.Util.DateUtil;
 import com.example.customschedule.Util.RecyclerAdapter;
 
 import java.util.ArrayList;
@@ -68,6 +69,18 @@ public class Dialog_SelectWeek extends Dialog implements MyItemClickListener{
     public void onItemClick(View view, int postion) {
         SharedPreferences.Editor editor = mContext.getSharedPreferences("getWeek",MODE_PRIVATE).edit();
         editor.putInt("weekNow",postion);
+        //此处推算写入第一周的日期
+        int dayOfYear = DateUtil.getDayOfYear();
+        int dayOfWeek = DateUtil.getWeek();
+        int mondayOfNowWeek = dayOfYear - (dayOfWeek - 1);
+        int firstDayOfSemester = mondayOfNowWeek - postion * 7;
+        //如果设置错误，强制设置当前周为第一周
+        if (firstDayOfSemester < 0){
+            firstDayOfSemester = mondayOfNowWeek;
+            Toast.makeText(mContext, "请正确设置周数，已将本周设置为第一周", Toast.LENGTH_SHORT).show();
+        }
+        //写入当前学期第一天的日期
+        editor.putInt("firstDayofSemester",firstDayOfSemester);
         editor.apply();
         tv.setText("第"+String.valueOf(postion+1)+"周");
         final ScheduleWeekRefresh scheduleWeekRefresh = new ScheduleWeekRefresh(mContext,this.view);

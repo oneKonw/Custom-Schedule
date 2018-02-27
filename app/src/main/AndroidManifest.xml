@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DIYSchedule" />
+        <activity android:name=".NavSetting" />
+        <activity android:name=".OpenAgreement"></activity>
     </application>
 
 </manifest>

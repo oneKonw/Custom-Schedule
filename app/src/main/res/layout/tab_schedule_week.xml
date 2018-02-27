@@ -233,15 +233,11 @@
                         </RelativeLayout>
                     </LinearLayout>
                 </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="双击任意位置添加课程，点击重置所有可以重置软件"/>
-                <Button
-                    android:id="@+id/btn_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="重置所有"/>
+                <!--<Button-->
+                    <!--android:id="@+id/btn_delete"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="重置所有"/>-->
 
             </LinearLayout>
         </ScrollView>
