@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     ScheduleDayFragment.initData();
                 }
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
@@ -189,7 +188,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPopupWindow.showAtLocation(toolbar,Gravity.RIGHT|Gravity.TOP,20,0);
         popView.findViewById(R.id.resetAll).setOnClickListener(this);
     }
-
 
     private class MainPagerAdapter extends FragmentPagerAdapter{
         public MainPagerAdapter(FragmentManager fm){
