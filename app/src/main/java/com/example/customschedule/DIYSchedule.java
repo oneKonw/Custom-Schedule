@@ -54,7 +54,6 @@ public class DIYSchedule extends AppCompatActivity {
         txtClsSite = b.getString("clsSite");
         ClsName.setText(txtClsName);
         ClsSite.setText(txtClsSite);
-        spinner_day.setSelection(defaultDay,true);//设置星期默认值
 
         //周数选择
         findViewById(R.id.showdialog).setOnClickListener(new View.OnClickListener() {
@@ -71,19 +70,19 @@ public class DIYSchedule extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String[] days = getResources().getStringArray(R.array.day);
                 String temp_day = days[position];
-                if(temp_day.equals("星期一")){
+                if(temp_day.equals("周一")){
                     txtday = 1;
-                }else if(temp_day.equals("星期二")){
+                }else if(temp_day.equals("周二")){
                     txtday = 2;
-                }else if(temp_day.equals("星期三")){
+                }else if(temp_day.equals("周三")){
                     txtday = 3;
-                }else if (temp_day.equals("星期四")){
+                }else if (temp_day.equals("周四")){
                     txtday = 4;
-                }else if (temp_day.equals("星期五")){
+                }else if (temp_day.equals("周五")){
                     txtday = 5;
-                }else if (temp_day.equals("星期六")){
+                }else if (temp_day.equals("周六")){
                     txtday = 6;
-                }else if (temp_day.equals("星期天")){
+                }else if (temp_day.equals("周日")){
                     txtday = 7;
                 }
             }
@@ -93,6 +92,9 @@ public class DIYSchedule extends AppCompatActivity {
                 txtday = 1;
             }
         });
+
+        spinner_day.setSelection(defaultDay,true);//设置星期默认值
+
         //获取节数的值
         //region 获取节数
 //        btn_clsName.setOnClickListener(new View.OnClickListener() {

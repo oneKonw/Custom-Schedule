@@ -48,7 +48,6 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
     View view;
 
     protected Context mContent;
-    @TargetApi(23)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -50,7 +50,6 @@ import org.litepal.crud.DataSupport;
 import java.util.ArrayList;
 import java.util.List;
 
-@TargetApi(16)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Toolbar toolbar;
