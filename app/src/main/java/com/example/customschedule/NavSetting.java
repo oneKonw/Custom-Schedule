@@ -9,8 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 
 public class NavSetting extends AppCompatActivity {
 
@@ -45,6 +48,17 @@ public class NavSetting extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openAgreement = new Intent(NavSetting.this,OpenAgreement.class);
                 startActivity(openAgreement);
+            }
+        });
+
+        TextView tv_refresh = (TextView)findViewById(R.id.widget_refresh);
+        tv_refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NavSetting.this,WeekSchedule.class);
+                intent.setAction("refresh");
+                sendBroadcast(intent);
+                Toast.makeText(NavSetting.this, "开始", Toast.LENGTH_SHORT).show();
             }
         });
     }

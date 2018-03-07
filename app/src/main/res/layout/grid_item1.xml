@@ -15,7 +15,7 @@
         android:paddingBottom="25px"
         android:paddingTop="5px"
         android:textColor="#ffffff"
-        android:background="#e0268785"
+        android:background="#000000"
         android:textSize="9sp" />
 
     <!--<ImageView-->

@@ -32,6 +32,19 @@
         android:background="@color/white"
         android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/widget_refresh"
+        android:layout_width="380dp"
+        android:layout_height="@dimen/setting_tv_height"
+        android:elevation="1dp"
+        android:text="刷新"
+        android:textColor="@color/hui"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"/>
+
 
 
 </LinearLayout>

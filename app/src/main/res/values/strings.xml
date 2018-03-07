@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">自定义课程表</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+
     <string-array name="day">
         <item>周一</item>
         <item>周二</item>
@@ -32,4 +36,5 @@
         <item>第二十周</item>
         <item>第二十一周</item>
     </string-array>
+
 </resources>

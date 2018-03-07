@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/item_null"
+        android:id="@+id/item3"
         android:layout_width="50dp"
         android:layout_height="73dp"
         android:layout_marginBottom="5px"
@@ -14,6 +14,6 @@
         android:gravity="center"
         android:paddingBottom="25px"
         android:paddingTop="5px"
-        android:textColor="#ffffff"
-        android:background="#00ffffff" />
+        android:textColor="#000000"
+        android:background="#577C8A" />
 </RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.customschedule.mFragment;
 import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,10 @@ import android.widget.Toast;
 import com.example.customschedule.DIYSetting.DIYCourses;
 import com.example.customschedule.DIYSetting.DIYDaySchedule;
 import com.example.customschedule.Dialog_ShowMessage;
+import com.example.customschedule.NavSetting;
 import com.example.customschedule.R;
 import com.example.customschedule.Util.ConversionPxandDP;
+import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 
 import org.litepal.crud.DataSupport;
 
@@ -107,6 +110,9 @@ public class ScheduleWeekRefresh {
                 }
             }
         }
+        Intent intent = new Intent(context,WeekSchedule.class);
+        intent.setAction("refresh");
+        context.sendBroadcast(intent);
 
     }
 
