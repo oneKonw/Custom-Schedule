@@ -40,6 +40,7 @@
             android:layout_height="match_parent">
 
         </LinearLayout>
+
         <LinearLayout
             android:orientation="vertical"
             android:id="@+id/widget_week_ll_day4"
@@ -48,13 +49,28 @@
             android:layout_height="match_parent">
 
         </LinearLayout>
+
         <LinearLayout
             android:orientation="vertical"
             android:id="@+id/widget_week_ll_day5"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/widget_week_ll_day6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/widget_week_ll_day7"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
         </LinearLayout>
     </LinearLayout>
 

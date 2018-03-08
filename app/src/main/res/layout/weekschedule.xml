@@ -31,23 +31,26 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="周一"
+                android:text="一"
                 android:textColor="#be000000"
                 android:paddingBottom="25px"
                 android:paddingTop="5px"/>
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="周二"
-                android:textColor="#be000000"/>
+                android:text="二"
+                android:textColor="#be000000"
+                android:id="@+id/textView3" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="周三"
+                android:text="三"
                 android:textColor="#be000000"/>
             <TextView
                 android:layout_width="0dp"
@@ -61,7 +64,21 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="周五"
+                android:text="五"
+                android:textColor="#be000000"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="六"
+                android:textColor="#be000000"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="日"
                 android:textColor="#be000000"/>
         </LinearLayout>
     </LinearLayout>

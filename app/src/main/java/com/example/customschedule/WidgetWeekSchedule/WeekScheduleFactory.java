@@ -27,6 +27,8 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
     static List<DIYDaySchedule> List_day3 = new ArrayList<>();
     static List<DIYDaySchedule> List_day4 = new ArrayList<>();
     static List<DIYDaySchedule> List_day5 = new ArrayList<>();
+    static List<DIYDaySchedule> List_day6 = new ArrayList<>();
+    static List<DIYDaySchedule> List_day7 = new ArrayList<>();
 
     public WeekScheduleFactory(Context context, Intent intent){
         this.context = context;
@@ -34,12 +36,20 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
 
     @Override
     public void onCreate() {
-
+        List_day1.clear();
+        List_day2.clear();
+        List_day3.clear();
+        List_day4.clear();
+        List_day5.clear();
+        List_day6.clear();
+        List_day7.clear();
         List_day1 = DataSupport.where("day = ?","1").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day2 = DataSupport.where("day = ?","2").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day3 = DataSupport.where("day = ?","3").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day4 = DataSupport.where("day = ?","4").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day5 = DataSupport.where("day = ?","5").order("clsstartnumber").find(DIYDaySchedule.class);
+        List_day6 = DataSupport.where("day = ?","6").order("clsstartnumber").find(DIYDaySchedule.class);
+        List_day7 = DataSupport.where("day = ?","7").order("clsstartnumber").find(DIYDaySchedule.class);
     }
 
     /*
@@ -53,11 +63,16 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
         List_day3.clear();
         List_day4.clear();
         List_day5.clear();
+        List_day6.clear();
+        List_day7.clear();
+
         List_day1 = DataSupport.where("day = ?","1").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day2 = DataSupport.where("day = ?","2").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day3 = DataSupport.where("day = ?","3").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day4 = DataSupport.where("day = ?","4").order("clsstartnumber").find(DIYDaySchedule.class);
         List_day5 = DataSupport.where("day = ?","5").order("clsstartnumber").find(DIYDaySchedule.class);
+        List_day6 = DataSupport.where("day = ?","6").order("clsstartnumber").find(DIYDaySchedule.class);
+        List_day7 = DataSupport.where("day = ?","7").order("clsstartnumber").find(DIYDaySchedule.class);
     }
 
     @Override
@@ -67,6 +82,8 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
         List_day3.clear();
         List_day4.clear();
         List_day5.clear();
+        List_day6.clear();
+        List_day7.clear();
     }
 
     @Override
@@ -83,11 +100,15 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
         //最终remoteview
         RemoteViews rv_final = new RemoteViews(context.getPackageName(),R.layout.widget_weekschedule_list);
         rv_final.addView(R.id.widget_week_ll_period,setPeriod());
+
+
         rv_final.addView(R.id.widget_week_ll_day1,setListItemview(List_day1));
         rv_final.addView(R.id.widget_week_ll_day2,setListItemview(List_day2));
         rv_final.addView(R.id.widget_week_ll_day3,setListItemview(List_day3));
         rv_final.addView(R.id.widget_week_ll_day4,setListItemview(List_day4));
         rv_final.addView(R.id.widget_week_ll_day5,setListItemview(List_day5));
+        rv_final.addView(R.id.widget_week_ll_day6,setListItemview(List_day6));
+        rv_final.addView(R.id.widget_week_ll_day7,setListItemview(List_day7));
 
         return rv_final;
     }

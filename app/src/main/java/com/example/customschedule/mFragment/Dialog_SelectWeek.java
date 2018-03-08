@@ -2,6 +2,7 @@ package com.example.customschedule.mFragment;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.example.customschedule.R;
 import com.example.customschedule.Util.DateUtil;
 import com.example.customschedule.Util.RecyclerAdapter;
+import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 
 import java.util.ArrayList;
 
@@ -84,6 +86,9 @@ public class Dialog_SelectWeek extends Dialog implements MyItemClickListener{
         editor.apply();
         tv.setText("第"+String.valueOf(postion+1)+"周");
         final ScheduleWeekRefresh scheduleWeekRefresh = new ScheduleWeekRefresh(mContext,this.view);
+
+
+
         scheduleWeekRefresh.refresh(postion);
         this.dismiss();
     }

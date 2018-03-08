@@ -110,10 +110,6 @@ public class ScheduleWeekRefresh {
                 }
             }
         }
-        Intent intent = new Intent(context,WeekSchedule.class);
-        intent.setAction("refresh");
-        context.sendBroadcast(intent);
-
     }
 
     private void setDaySchedule(String clsName,String clsSite,int clsStartNumber,int clsCountNumber,int iID,int day){

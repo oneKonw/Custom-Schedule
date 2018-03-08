@@ -57,7 +57,7 @@ public class WeekSchedule extends AppWidgetProvider {
             final ComponentName cn = new ComponentName(context, WeekSchedule.class);
             // 这句话会调用RemoteViewSerivce中RemoteViewsFactory的onDataSetChanged()方法。
             mgr.notifyAppWidgetViewDataChanged(mgr.getAppWidgetIds(cn),R.id.widget_list);
-
+//            Toast.makeText(context, "桌面插件刷新", Toast.LENGTH_SHORT).show();
         }
     }
 

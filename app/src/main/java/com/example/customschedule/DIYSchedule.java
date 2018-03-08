@@ -268,8 +268,4 @@ public class DIYSchedule extends AppCompatActivity {
         });
         picker.show();
     }
-
-
-
-
 }

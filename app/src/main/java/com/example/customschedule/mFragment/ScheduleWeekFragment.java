@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.customschedule.DIYSchedule;
 import com.example.customschedule.DIYSetting.DIYCourses;
@@ -19,6 +20,7 @@ import com.example.customschedule.DIYSetting.DIYDaySchedule;
 import com.example.customschedule.DIYSetting.DIYWeek;
 import com.example.customschedule.R;
 import com.example.customschedule.Util.DateUtil;
+import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 
 import org.litepal.crud.DataSupport;
 
@@ -99,9 +101,10 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
                 Dialog_SelectWeek dialog_selectWeek = new Dialog_SelectWeek(mContent,view,tv_nowWeek);
                 dialog_selectWeek.show();
                 //读取当前星期值
-                SharedPreferences pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
-                weekNow = pref.getInt("weekNow",0);
-                scheduleWeekRefresh.refresh(weekNow);
+//                SharedPreferences pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
+//                weekNow = pref.getInt("weekNow",0);
+//
+//                scheduleWeekRefresh.refresh(weekNow);
 //                refreshShow(weekNow);
 
             }
@@ -200,11 +203,13 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
         //刷新页面
         SharedPreferences pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
         weekNow = pref.getInt("weekNow",0);
-
-//        spinner_nowWeek.setSelection(weekNow);
-        //这里少了一个刷新
         scheduleWeekRefresh.refresh(weekNow);
-//        refreshShow(weekNow);
+
+        //刷新桌面插件
+        Intent intent = new Intent(mContent,WeekSchedule.class);
+        intent.setAction("refresh");
+        mContent.sendBroadcast(intent);
+        Toast.makeText(mContent, "refresh", Toast.LENGTH_SHORT).show();
     }
 
 
