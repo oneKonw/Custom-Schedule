@@ -41,6 +41,7 @@ import com.example.customschedule.DIYSetting.DIYCourses;
 import com.example.customschedule.DIYSetting.DIYDaySchedule;
 import com.example.customschedule.DIYSetting.DIYWeek;
 import com.example.customschedule.Util.ConversionPxandDP;
+import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 import com.example.customschedule.mFragment.ScheduleDayFragment;
 import com.example.customschedule.mFragment.ScheduleWeekFragment;
 import com.example.customschedule.mFragment.ScheduleWeekRefresh;
@@ -57,6 +58,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     NavigationView mNavigationView;
     PopupWindow mPopupWindow;
     TabLayout TB;
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        //刷新桌面插件
+        Intent intent = new Intent(MainActivity.this,WeekSchedule.class);
+        intent.setAction("refresh");
+        sendBroadcast(intent);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -219,4 +229,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return 2;
         }
     }
+
+
 }

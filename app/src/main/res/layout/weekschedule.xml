@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="周四"
+                android:text="四"
                 android:textColor="#be000000"/>
             <TextView
                 android:layout_width="0dp"

@@ -197,11 +197,11 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
     @TargetApi(16)
     public RemoteViews isNull(int count){
 
-        RemoteViews result = new RemoteViews(context.getPackageName(),R.layout.widget_weekschedule_day);
+        RemoteViews result = new RemoteViews(context.getPackageName(),R.layout.widget_group_itemnull);
         RemoteViews nullItem = new RemoteViews(context.getPackageName(),R.layout.widget_weekschedule_itemnull);
 
         for (int i = 0; i < count; i++){
-            result.addView(R.id.widget_week_ll_day,nullItem);
+            result.addView(R.id.widget_group_itemnull,nullItem);
         }
         return result;
     }

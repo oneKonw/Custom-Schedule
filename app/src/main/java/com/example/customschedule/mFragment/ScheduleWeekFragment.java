@@ -195,6 +195,7 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
     @Override
     public void onPause() {
         super.onPause();
+
     }
 
     @Override
@@ -205,11 +206,7 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
         weekNow = pref.getInt("weekNow",0);
         scheduleWeekRefresh.refresh(weekNow);
 
-        //刷新桌面插件
-        Intent intent = new Intent(mContent,WeekSchedule.class);
-        intent.setAction("refresh");
-        mContent.sendBroadcast(intent);
-        Toast.makeText(mContent, "refresh", Toast.LENGTH_SHORT).show();
+
     }
 
 
