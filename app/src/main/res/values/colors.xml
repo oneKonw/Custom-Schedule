@@ -28,6 +28,9 @@
     <color name="DIY_setting_yes" type="color">#888B91</color>
     <color name="DIY_setting_no" type="color">#d2696c</color>
 
+    <!--widget字体颜色-->
+    <color name="widget_table_textColor" type="color">#565656</color>
+
 
 
 

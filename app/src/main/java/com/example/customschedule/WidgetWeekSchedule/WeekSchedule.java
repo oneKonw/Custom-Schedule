@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
+import com.example.customschedule.MyApplication;
+import com.example.customschedule.NavSetting;
 import com.example.customschedule.R;
+import com.example.customschedule.Services.RefreshWidget;
 
 /**
  * Implementation of App Widget functionality.
@@ -33,6 +36,9 @@ public class WeekSchedule extends AppWidgetProvider {
         final PendingIntent refreshPendingIntent = PendingIntent.getBroadcast(
                 context, 0, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.refreshDemo,refreshPendingIntent);
+
+        Intent refresh = new Intent(MyApplication.getContext(), RefreshWidget.class);
+        MyApplication.getContext().startService(refresh);
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }

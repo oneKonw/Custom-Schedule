@@ -3,13 +3,13 @@
     package="com.example.customschedule">
 
     <application
-        android:name="org.litepal.LitePalApplication"
+        android:name="com.example.customschedule.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".DIYSchedule" />
         <activity android:name=".NavSetting" />
         <activity android:name=".OpenAgreement" />
@@ -33,11 +33,15 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/week_schedule_info" />
         </receiver>
+
         <service
             android:name=".WidgetWeekSchedule.WeekScheduleService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
-
+        <service
+            android:name=".Services.RefreshWidget"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

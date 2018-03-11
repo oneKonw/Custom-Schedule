@@ -2,6 +2,7 @@ package com.example.customschedule;
 
 import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -40,6 +41,7 @@ import android.widget.Toast;
 import com.example.customschedule.DIYSetting.DIYCourses;
 import com.example.customschedule.DIYSetting.DIYDaySchedule;
 import com.example.customschedule.DIYSetting.DIYWeek;
+import com.example.customschedule.Services.RefreshWidget;
 import com.example.customschedule.Util.ConversionPxandDP;
 import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 import com.example.customschedule.mFragment.ScheduleDayFragment;
@@ -66,6 +68,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(MainActivity.this,WeekSchedule.class);
         intent.setAction("refresh");
         sendBroadcast(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+
     }
 
     @Override
@@ -155,6 +164,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
+
     }
 
     @Override

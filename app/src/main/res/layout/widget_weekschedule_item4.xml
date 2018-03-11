@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/widget_week_tv_itme_4"
+    android:textSize="@dimen/widget_item_textSize"
+
     android:layout_width="40dp"
     android:layout_height="160dp"
     android:layout_gravity="center_horizontal"
-    android:background="@color/black">
+    android:background="@drawable/widget_item">
 
 </TextView>

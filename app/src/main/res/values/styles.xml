@@ -26,14 +26,14 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">18sp</item>
     </style>
-    <style name="widget_week_null">
-        <item name="android:id">@android:id/text1</item>
-        <item name="android:layout_width">50dp</item>
-        <item name="android:layout_height">73dp</item>
-        <item name="android:background">@color/red2</item>
+
+    <style name="widget_week_textview">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/widget_table_textColor</item>
+        <item name="android:textSize">13sp</item>
     </style>
 
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.customschedule.DIYSetting.DIYDaySchedule;
+import com.example.customschedule.MyApplication;
 import com.example.customschedule.R;
 
 import org.litepal.crud.DataSupport;
@@ -211,6 +212,7 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
         for (int i = 0; i < 12; i++){
             RemoteViews rv_period_item = new RemoteViews(context.getPackageName(),R.layout.widget_weekschedule_period_item);
             rv_period_item.setTextViewText(R.id.widget_period,String.valueOf(i+1));
+            rv_period_item.setTextColor(R.id.widget_period, MyApplication.getContext().getResources().getColor(R.color.widget_table_textColor));
             result.addView(R.id.widget_week_ll_day,rv_period_item);
         }
         return result;

@@ -13,6 +13,7 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.customschedule.Services.RefreshWidget;
 import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 
 public class NavSetting extends AppCompatActivity {
@@ -55,10 +56,8 @@ public class NavSetting extends AppCompatActivity {
         tv_refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NavSetting.this,WeekSchedule.class);
-                intent.setAction("refresh");
-                sendBroadcast(intent);
-                Toast.makeText(NavSetting.this, "开始", Toast.LENGTH_SHORT).show();
+                Intent refresh = new Intent(NavSetting.this, RefreshWidget.class);
+                startService(refresh);
             }
         });
     }
