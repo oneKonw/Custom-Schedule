@@ -18,7 +18,7 @@ public class DateUtil {
         //注意1代表星期天，其余按顺序推导
     }
     public static int getDayOfYear(){
-
+        calendar = Calendar.getInstance();
         int resultDay = calendar.get(Calendar.DAY_OF_YEAR);
         return resultDay;
     }

@@ -14,7 +14,8 @@ import com.example.customschedule.Util.DateUtil;
 import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 
 public class RefreshWidget extends Service {
-    int second = 12 * 60 * 60 * 1000;
+    //初始没3个小时刷新一次
+    int second = 3 * 60 * 60 * 1000;
     public RefreshWidget() {
     }
 
@@ -35,7 +36,7 @@ public class RefreshWidget extends Service {
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         //识别当前是周一则将刷新时间改为每周刷新一次，不然每天刷新一次
         if (DateUtil.getWeek() == 1){
-            second = 7 * 12 * 60 * 60 * 1000;
+            second = 7 * 24 * 60 * 60 * 1000;
         }
         long triggerAtTime = SystemClock.elapsedRealtime()+second;
         Intent i = new Intent(this,RefreshWidget.class);

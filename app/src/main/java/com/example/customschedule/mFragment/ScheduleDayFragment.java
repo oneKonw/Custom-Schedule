@@ -107,4 +107,16 @@ public class ScheduleDayFragment extends android.support.v4.app.Fragment {
         adapterDaySchedule = new AdapterDaySchedule(listItem);
         recyclerView.setAdapter(adapterDaySchedule);
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        initData();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initData();
+    }
 }

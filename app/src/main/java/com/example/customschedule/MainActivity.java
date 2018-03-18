@@ -43,6 +43,7 @@ import com.example.customschedule.DIYSetting.DIYDaySchedule;
 import com.example.customschedule.DIYSetting.DIYWeek;
 import com.example.customschedule.Services.RefreshWidget;
 import com.example.customschedule.Util.ConversionPxandDP;
+import com.example.customschedule.Util.DateUtil;
 import com.example.customschedule.WidgetWeekSchedule.WeekSchedule;
 import com.example.customschedule.mFragment.ScheduleDayFragment;
 import com.example.customschedule.mFragment.ScheduleWeekFragment;
@@ -68,6 +69,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(MainActivity.this,WeekSchedule.class);
         intent.setAction("refresh");
         sendBroadcast(intent);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
     }
 
     @Override
@@ -141,6 +148,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //endregion
 
 
+        //读取第一周，如果为零则不进行计算，直接设置为第一周，不为零则进行计算，设置为当前周
+        SharedPreferences getFirstMonday =MainActivity.this.getSharedPreferences("getWeek",MODE_PRIVATE);
+        int firstMonday = getFirstMonday.getInt("firstDayofSemester",0);
+        if (firstMonday != 0) {
+            SharedPreferences.Editor editorSetWeekNow = MainActivity.this.getSharedPreferences("getWeek",MODE_PRIVATE).edit();
+            //防止周数超过25后出现闪退
+            if (DateUtil.getWeekOfNow(firstMonday) < 26){
+                editorSetWeekNow.putInt("weekNow", DateUtil.getWeekOfNow(firstMonday)-1);
+                editorSetWeekNow.apply();
+            }else{
+                editorSetWeekNow.putInt("weekNow", 0);
+                editorSetWeekNow.apply();
+            }
+        }
+        //读取当前星期值
+        SharedPreferences pref = MainActivity.this.getSharedPreferences("getWeek",MODE_PRIVATE);
+        int weekNow = pref.getInt("weekNow",0);
+        ScheduleWeekRefresh.refreshWidget(weekNow);
+
+
 
         TB = (TabLayout)findViewById(R.id.tab);
         MainPagerAdapter adapter = new MainPagerAdapter(getSupportFragmentManager());
@@ -164,7 +191,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-
 
     }
 

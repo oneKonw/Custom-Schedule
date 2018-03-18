@@ -192,6 +192,17 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
      * 刷新show页面
      */
 
+
+
+    public static void refreshOFMain(){
+        day1.removeAllViews();
+        day2.removeAllViews();
+        day3.removeAllViews();
+        day4.removeAllViews();
+        day5.removeAllViews();
+        day6.removeAllViews();
+        day7.removeAllViews();
+    }
     @Override
     public void onPause() {
         super.onPause();
@@ -205,19 +216,30 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
         SharedPreferences pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
         weekNow = pref.getInt("weekNow",0);
         scheduleWeekRefresh.refresh(weekNow);
-
-
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        //读取第一周，如果为零则不进行计算，直接设置为第一周，不为零则进行计算，设置为当前周
+        SharedPreferences getFirstMonday = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
+        int firstMonday = getFirstMonday.getInt("firstDayofSemester",0);
+        if (firstMonday != 0) {
+            SharedPreferences.Editor editorSetWeekNow = mContent.getSharedPreferences("getWeek",MODE_PRIVATE).edit();
+            //防止周数超过25后出现闪退
+            if (DateUtil.getWeekOfNow(firstMonday) < 26){
+                editorSetWeekNow.putInt("weekNow", DateUtil.getWeekOfNow(firstMonday)-1);
+                editorSetWeekNow.apply();
+            }else{
+                editorSetWeekNow.putInt("weekNow", 0);
+                editorSetWeekNow.apply();
+            }
+        }
+        //读取当前星期值
+        SharedPreferences pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
+        weekNow = pref.getInt("weekNow",0);
+        scheduleWeekRefresh.refresh(weekNow);
 
-    public static void refreshOFMain(){
-        day1.removeAllViews();
-        day2.removeAllViews();
-        day3.removeAllViews();
-        day4.removeAllViews();
-        day5.removeAllViews();
-        day6.removeAllViews();
-        day7.removeAllViews();
+        tv_nowWeek.setText("第"+String.valueOf(weekNow+1)+"周");
     }
-
 }

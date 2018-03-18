@@ -3,6 +3,7 @@ package com.example.customschedule.WidgetWeekSchedule;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.TypedValue;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
@@ -13,8 +14,12 @@ import java.util.List;
 import com.example.customschedule.DIYSetting.DIYDaySchedule;
 import com.example.customschedule.MyApplication;
 import com.example.customschedule.R;
+import com.example.customschedule.Util.DateUtil;
+import com.example.customschedule.mFragment.ScheduleWeekRefresh;
 
 import org.litepal.crud.DataSupport;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by hyt on 2018/3/1.
@@ -59,6 +64,25 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
      */
     @Override
     public void onDataSetChanged() {
+        //读取第一周，如果为零则不进行计算，直接设置为第一周，不为零则进行计算，设置为当前周
+        SharedPreferences getFirstMonday =context.getSharedPreferences("getWeek",MODE_PRIVATE);
+        int firstMonday = getFirstMonday.getInt("firstDayofSemester",0);
+        if (firstMonday != 0) {
+            SharedPreferences.Editor editorSetWeekNow = context.getSharedPreferences("getWeek",MODE_PRIVATE).edit();
+            //防止周数超过25后出现闪退
+            if (DateUtil.getWeekOfNow(firstMonday) < 26){
+                editorSetWeekNow.putInt("weekNow", DateUtil.getWeekOfNow(firstMonday)-1);
+                editorSetWeekNow.apply();
+            }else{
+                editorSetWeekNow.putInt("weekNow", 0);
+                editorSetWeekNow.apply();
+            }
+        }
+        //读取当前星期值
+        SharedPreferences pref = context.getSharedPreferences("getWeek",MODE_PRIVATE);
+        int weekNow = pref.getInt("weekNow",0);
+        ScheduleWeekRefresh.refreshWidget(weekNow);
+
         List_day1.clear();
         List_day2.clear();
         List_day3.clear();

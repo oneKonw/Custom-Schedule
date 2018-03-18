@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
@@ -13,6 +14,10 @@ import com.example.customschedule.MyApplication;
 import com.example.customschedule.NavSetting;
 import com.example.customschedule.R;
 import com.example.customschedule.Services.RefreshWidget;
+import com.example.customschedule.Util.DateUtil;
+import com.example.customschedule.mFragment.ScheduleWeekRefresh;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Implementation of App Widget functionality.
@@ -37,6 +42,7 @@ public class WeekSchedule extends AppWidgetProvider {
                 context, 0, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.refreshDemo,refreshPendingIntent);
 
+        //启动自动刷新服务
         Intent refresh = new Intent(MyApplication.getContext(), RefreshWidget.class);
         MyApplication.getContext().startService(refresh);
 
@@ -58,6 +64,9 @@ public class WeekSchedule extends AppWidgetProvider {
         String action = intent.getAction();
 
         if (action.equals("refresh")) {
+            //刷新天表
+
+
             // 刷新Widget
             final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
             final ComponentName cn = new ComponentName(context, WeekSchedule.class);

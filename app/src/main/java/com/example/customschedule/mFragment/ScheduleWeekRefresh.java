@@ -40,7 +40,7 @@ public class ScheduleWeekRefresh {
     private  RelativeLayout day6;
     private  RelativeLayout day7;
     List<DIYCourses> List_DIYCourses = new ArrayList<>();
-    List<DIYDaySchedule>List_DIYDaySchedule = new ArrayList<>();
+    static List<DIYDaySchedule>List_DIYDaySchedule = new ArrayList<>();
 
     ScheduleWeekRefresh (Context context, View view){
         this.context = context;
@@ -112,7 +112,7 @@ public class ScheduleWeekRefresh {
         }
     }
 
-    private void setDaySchedule(String clsName,String clsSite,int clsStartNumber,int clsCountNumber,int iID,int day){
+    private static void setDaySchedule(String clsName,String clsSite,int clsStartNumber,int clsCountNumber,int iID,int day){
         DIYDaySchedule diyDaySchedule = new DIYDaySchedule();
         diyDaySchedule.setClsName(clsName);
         diyDaySchedule.setClsSite(clsSite);
@@ -161,4 +161,49 @@ public class ScheduleWeekRefresh {
         });
         r1.addView(tv1);
     }
+
+    public static void refreshWidget(int position){
+        //清空天表
+        DataSupport.deleteAll(DIYDaySchedule.class);
+        //重新加载
+        List<DIYCourses> List_widgetList = new ArrayList<>();
+        List_widgetList = DataSupport.findAll(DIYCourses.class);
+        for (int i=0; i<List_widgetList.size(); i++) {
+            DIYCourses tempCourse = List_widgetList.get(i);
+            String tempClsName = tempCourse.getTxtClsName();
+            String tempClsSite = tempCourse.getTxtClsSite();
+            int tempDay = tempCourse.getTxtday();
+            int tempNumber = tempCourse.getTxtNumber();
+            int tempCountNumber = tempCourse.getTxtCountNumber();
+            int tempID = tempCourse.getiId();//iID
+            //此处可以进行优化，将课程名和地点名集合到settextview方法中，可以顺带优化输入的逻辑
+            String tempTxt = tempClsName + "@" + tempClsSite;
+            //用原生查询查
+            //先利用iID查询相应课程的position相对应的周是否为0
+            Cursor cursor = DataSupport.findBySQL("select * from DIYWeek where iID = ?",String.valueOf(tempID));
+            cursor.moveToFirst();
+            String getweek = "week"+String.valueOf(position+1);
+            //getcolumnindex获取对应列的index值
+            int show = cursor.getInt(cursor.getColumnIndex(getweek));
+            //如果不为零则显示
+            if (show!=0){
+                if (tempDay == 1) {
+                    setDaySchedule(tempClsName,tempClsSite,tempNumber,tempCountNumber,tempID,tempDay);
+                } else if (tempDay == 2) {
+                    setDaySchedule(tempClsName,tempClsSite,tempNumber,tempCountNumber,tempID,tempDay);
+                } else if (tempDay == 3) {
+                    setDaySchedule(tempClsName,tempClsSite,tempNumber,tempCountNumber,tempID,tempDay);
+                } else if (tempDay == 4) {
+                    setDaySchedule(tempClsName,tempClsSite,tempNumber,tempCountNumber,tempID,tempDay);
+                } else if (tempDay == 5) {
+                    setDaySchedule(tempClsName,tempClsSite,tempNumber,tempCountNumber,tempID,tempDay);
+                } else if (tempDay == 6) {
+                    setDaySchedule(tempClsName,tempClsSite,tempNumber,tempCountNumber,tempID,tempDay);
+                } else if (tempDay == 7) {
+                    setDaySchedule(tempClsName,tempClsSite,tempNumber,tempCountNumber,tempID,tempDay);
+                }
+            }
+        }
+    }
+
 }
