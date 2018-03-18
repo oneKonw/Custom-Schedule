@@ -31,7 +31,12 @@
     <!--widget字体颜色-->
     <color name="widget_table_textColor" type="color">#565656</color>
 
-
+    <!--桌面插件颜色-->
+    <color name="widget_item_color1">#607D8B</color>
+    <color name="widget_item_color2">#455A64</color>
+    <color name="widget_item_color3">#607D8B</color>
+    <color name="widget_item_color4">#e0268785</color>
+    <color name="widget_item_color5">#577C8A</color>
 
 
 

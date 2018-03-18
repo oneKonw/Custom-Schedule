@@ -3,7 +3,7 @@
     android:id="@+id/widget_week_tv_itme_4"
     android:textSize="@dimen/widget_item_textSize"
 
-    android:layout_width="40dp"
+    android:layout_width="45dp"
     android:layout_height="160dp"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/widget_item">

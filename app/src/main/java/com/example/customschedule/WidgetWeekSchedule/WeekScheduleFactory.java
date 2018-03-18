@@ -116,6 +116,8 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
         return 1;
     }
 
+
+
     /*
      * 创建并且填充，在指定索引位置显示的View，这个和BaseAdapter的getView类似
      */
@@ -241,4 +243,6 @@ public class WeekScheduleFactory  implements RemoteViewsService.RemoteViewsFacto
         }
         return result;
     }
+
+
 }

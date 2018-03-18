@@ -7,6 +7,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
@@ -35,8 +36,7 @@ public class WeekSchedule extends AppWidgetProvider {
         views.setEmptyView(R.id.widget_list,R.layout.none_data);
 
 
-        final Intent refreshIntent = new Intent(context,
-                WeekSchedule.class);
+        final Intent refreshIntent = new Intent(context, WeekSchedule.class);
         refreshIntent.setAction("refresh");
         final PendingIntent refreshPendingIntent = PendingIntent.getBroadcast(
                 context, 0, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -81,11 +81,13 @@ public class WeekSchedule extends AppWidgetProvider {
     @Override
     public void onEnabled(Context context) {
         // Enter relevant functionality for when the first widget is created
+
     }
 
     @Override
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
+
     }
 
 }
