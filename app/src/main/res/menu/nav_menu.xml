@@ -7,6 +7,10 @@
                 android:id="@+id/nav_DIYSchedule"
                 android:title="课程表"
                 android:icon="@drawable/nav_schedule"/>
+            <item
+                android:id="@+id/nav_importSchedule"
+                android:title="导入"
+                android:icon="@drawable/nav_importschedule"/>
 
         </menu>
     </item>

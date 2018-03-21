@@ -3,7 +3,7 @@
     package="com.example.customschedule">
 
     <application
-        android:name="com.example.customschedule.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -41,7 +41,9 @@
         <service
             android:name=".Services.RefreshWidget"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".ImportSchedule"></activity>
     </application>
 
 </manifest>

@@ -76,7 +76,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:text="周数"
-        android:background="@color/DIY_setting_week"
+        android:background="@color/widget_item_color4"
         />
 
     <Button
@@ -87,7 +87,7 @@
         android:layout_height="50dp"
         android:onClick="onLinkagePicker"
         android:text="节数"
-        android:background="@color/DIY_setting_week"
+        android:background="@color/widget_item_color4"
         />
 
     <LinearLayout

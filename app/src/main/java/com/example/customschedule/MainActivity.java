@@ -50,6 +50,7 @@ import com.example.customschedule.mFragment.ScheduleWeekFragment;
 import com.example.customschedule.mFragment.ScheduleWeekRefresh;
 
 import org.litepal.crud.DataSupport;
+import org.litepal.crud.Many2ManyAnalyzer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -133,6 +134,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Intent intent = new Intent(MainActivity.this,NavSetting.class);
                         startActivity(intent);
                         break;
+                    case R.id.nav_importSchedule:
+                        Intent intent1 = new Intent(MainActivity.this,ImportSchedule.class);
+                        startActivity(intent1);
                 }
                 mDrawerLayout.closeDrawers();
                 return true;
