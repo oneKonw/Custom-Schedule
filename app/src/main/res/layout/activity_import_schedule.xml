@@ -57,5 +57,19 @@
         android:id="@+id/demo_sure"
         android:layout_width="150dp"
         android:layout_height="30dp" />
+    <TextView
+        android:layout_marginTop="250dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="10sp"
+        android:text="目前只支持嘉应学院"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:textSize="10sp"
+        android:text="由于正方系统屏蔽外网，必须使用内网才能导入"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

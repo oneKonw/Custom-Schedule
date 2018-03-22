@@ -43,7 +43,10 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ImportSchedule"></activity>
+        <activity android:name=".ImportSchedule" />
+        <activity android:name=".About"
+            android:theme="@style/AboutTheme">
+        </activity>
     </application>
 
 </manifest>

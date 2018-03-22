@@ -34,7 +34,7 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
 
-    int iID ,weekNow;
+    int iID ,weekNow,tip;
     private static RelativeLayout day1;
     private static RelativeLayout day2;
     private static RelativeLayout day3;
@@ -44,6 +44,8 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
     private static RelativeLayout day7;
 //    private Button btn_delete;
     private TextView tv_nowWeek;
+    private TextView tv_tip;
+
     List<DIYCourses> List_DIYCourses = new ArrayList<>();
     List<DIYDaySchedule>List_DIYDaySchedule = new ArrayList<>();
     ScheduleWeekRefresh scheduleWeekRefresh;
@@ -71,6 +73,14 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
         day7 = (RelativeLayout) view.findViewById(R.id.day7);
 //        btn_delete = (Button)view.findViewById(R.id.btn_delete);
         tv_nowWeek = (TextView) view.findViewById(R.id.tab_tv_nowweek);
+        tv_tip = (TextView) view.findViewById(R.id.tv_weekSchedule_tip);
+
+        //隐藏tip
+        SharedPreferences pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
+        tip = pref.getInt("tipCount",0);
+        if (tip != 0){
+            tv_tip.setVisibility(view.GONE);
+        }
 
         //读取第一周，如果为零则不进行计算，直接设置为第一周，不为零则进行计算，设置为当前周
         SharedPreferences getFirstMonday = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
@@ -87,13 +97,14 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
             }
         }
         //读取当前星期值
-        SharedPreferences pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
+        pref = mContent.getSharedPreferences("getWeek",MODE_PRIVATE);
         weekNow = pref.getInt("weekNow",0);
         scheduleWeekRefresh.refresh(weekNow);
 
+        tip = weekNow;
+
 //        refreshShow(weekNow);
         tv_nowWeek.setText("第"+String.valueOf(weekNow+1)+"周");
-
 
         tv_nowWeek.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +118,17 @@ public class ScheduleWeekFragment extends android.support.v4.app.Fragment {
 //                scheduleWeekRefresh.refresh(weekNow);
 //                refreshShow(weekNow);
 
+            }
+        });
+        tv_tip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tip == 0) {
+                    tv_tip.setVisibility(view.GONE);
+                    SharedPreferences.Editor editor = mContent.getSharedPreferences("getWeek", MODE_PRIVATE).edit();
+                    editor.putInt("tipCount", 1);
+                    editor.apply();
+                }
             }
         });
 

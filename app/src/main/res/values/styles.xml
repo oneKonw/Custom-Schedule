@@ -36,5 +36,7 @@
         <item name="android:textSize">13sp</item>
     </style>
 
+    <style name="AboutTheme" parent="AppTheme">
+    </style>
 
 </resources>

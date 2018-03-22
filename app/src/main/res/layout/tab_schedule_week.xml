@@ -19,20 +19,23 @@
             android:paddingBottom="4dp"
             android:background="@color/white"
             android:elevation="1dp"/>
-        <Spinner
-            android:layout_gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/spinner_nowWeek"
-            android:entries="@array/nowWeek">
-        </Spinner>
+        <TextView
+            android:id="@+id/tv_weekSchedule_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="双击任意地方可添加课程，正方系统导入在左上角菜单里，点击可关闭此条提示"
+            android:textSize="10sp"
+            android:gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="30dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,12 +46,15 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="周一"/>
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="周二"/>
+                    android:text="周二"
+                    android:id="@+id/textView7" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -61,18 +67,23 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="周四"/>
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="周五"/>
+                    android:text="周五"
+                    android:id="@+id/textView4" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="周六"/>
+                    android:text="周六"
+                    android:id="@+id/textView6" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"

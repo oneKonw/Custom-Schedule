@@ -38,7 +38,7 @@
         android:layout_width="380dp"
         android:layout_height="@dimen/setting_tv_height"
         android:elevation="1dp"
-        android:text="刷新"
+        android:text="关于"
         android:textColor="@color/hui"
         android:gravity="center_vertical"
         android:paddingLeft="30dp"

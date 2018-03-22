@@ -19,7 +19,7 @@
 
     <!--课程详情页配色-->
     <color name="dialog_message_clsName" type="color">#ef737373</color>
-    <color name="dialog_message_table" type="color">#f3f1f0</color>
+    <color name="dialog_message_table" type="color">#e4e1de</color>
     <color name="dialog_message_setting" type="color">#bfa0a0</color>
 
     <!--DIY设置配色-->
@@ -35,8 +35,10 @@
     <color name="widget_item_color1">#607D8B</color>
     <color name="widget_item_color2">#455A64</color>
     <color name="widget_item_color3">#607D8B</color>
-    <color name="widget_item_color4">#e0268785</color>
+    <color name="widget_item_color4">#e02d918f</color>
     <color name="widget_item_color5">#db23b3af</color>
+
+    <color name="transparent">#00ffffff</color>
 
 
 

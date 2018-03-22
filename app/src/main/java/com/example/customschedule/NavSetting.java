@@ -56,8 +56,8 @@ public class NavSetting extends AppCompatActivity {
         tv_refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent refresh = new Intent(NavSetting.this, RefreshWidget.class);
-                startService(refresh);
+                Intent intentAbout = new Intent(NavSetting.this,About.class);
+                startActivity(intentAbout);
             }
         });
     }
